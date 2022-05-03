@@ -8,14 +8,17 @@ module.exports = (sequelize) => {
             primaryKey: true,
             autoIncrement: true
         },
-        nombre:{
+        title:{
             type: DataTypes.STRING
         },
-        precio:{
+        price:{
             type: DataTypes.FLOAT
         },
-        unidades:{
+        units:{
             type: DataTypes.INTEGER
+        },
+        catId:{
+            type:DataTypes.INTEGER
         }
     })
 

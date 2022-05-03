@@ -1,15 +1,14 @@
 require('dotenv').config();
 const express = require('express')
-
 const app = express()
-
 require('./config/db')
 
-//models
+const apiRouter = require('./api')
 
-app.get("/", (req, res) => {
-    res.send("Hola mundo")
-})
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
+app.use('/api', apiRouter)
 
 app.listen(3000, () => {
     console.log("SERVER READY ON PORT 3000")
