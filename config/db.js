@@ -17,7 +17,7 @@ const sequelize = new Sequelize(dbName,userName,dbPass, {
 
 const Products = ProductsModel(sequelize);
 
-sequelize.sync({force:false}).then(()=>{
+sequelize.sync({force:true}).then(()=>{//CUIDADO ACA ELIMINA LA TABLA SI EXISTIE 
     console.log("Created tables")
 })
 
